@@ -102,9 +102,9 @@ HTML_ADMIN_PANEL = """
         
         <form action="/admin-create-key" method="POST" class="form-group">
             <select name="tier_type">
-                <option value="FREE">Free (10 Modül)</option>
-                <option value="PRO">Pro (20 Modül)</option>
-                <option value="VIP">VIP (35 Modül - Tümü)</option>
+                <option value="FREE">Free (12 Modül)</option>
+                <option value="PRO">Pro (12 Modül)</option>
+                <option value="VIP">VIP (11 Modül - Tümü 35)</option>
             </select>
             <button type="submit">Yeni Lisans Key Üret</button>
         </form>
