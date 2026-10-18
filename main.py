@@ -100,14 +100,14 @@ HTML_PRICING = """
                 <div>
                     <div class="plan-title">Profesyonel (Pro)</div>
                     <div class="plan-price">180 TL</div>
-                    <a href="https://2hqenb-6k.myshopify.com/cart/8992911196183:1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
+                    <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992911196183&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
                 </div>
             </div>
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">Başlangıç (VIP)</div>
                     <div class="plan-price">400 TL</div>
-                    <a href="https://2hqenb-6k.myshopify.com/cart/8992919486487:1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
+                    <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992919486487&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
                 </div>
             </div>
         </div>
@@ -371,7 +371,6 @@ async def run_osint(target: str = Form(...), modules: list = Form(default=[])):
     cards_html = ""
     details_html = ""
     
-    # Gerçek ağ ve sistem sorguları (Net veri üretimi)
     resolved_ip = target
     try:
         if not target.replace(".", "").isdigit():
