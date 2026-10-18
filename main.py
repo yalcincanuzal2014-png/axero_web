@@ -80,7 +80,9 @@ HTML_PRICING = """
         .pricing-card { background: rgba(20, 12, 35, 0.85); border: 1px solid rgba(168, 85, 247, 0.25); border-radius: 20px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; }
         .pricing-card.featured { border-color: #c084fc; background: rgba(25, 14, 45, 0.95); }
         .plan-title { font-size: 22px; font-weight: bold; color: #fff; margin-bottom: 8px; }
-        .plan-price { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 25px; }
+        .plan-price { font-size: 34px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+        .plan-features { list-style: none; padding: 0; margin: 0 0 25px 0; color: #94a3b8; font-size: 13px; line-height: 1.8; }
+        .plan-features li::before { content: "✓ "; color: #c084fc; font-weight: bold; }
         .btn-plan { background: #0f071f; border: 1px solid rgba(168, 85, 247, 0.3); color: #fff; padding: 12px; border-radius: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 14px; display: block; width: 100%; box-sizing: border-box; cursor: pointer; }
         .pricing-card.featured .btn-plan { background: #fff; color: #000; border: none; }
     </style>
@@ -91,24 +93,46 @@ HTML_PRICING = """
         <div style="display:flex; gap:20px; font-size:14px;"><a href="/" style="color:#94a3b8; text-decoration:none;">Ev</a><a href="/fiyatlandirma" style="color: #c084fc; text-decoration:none;">Fiyatlandırma</a></div>
     </div>
     <div class="container">
-        <h1 style="color:#fff;">Profesyonel Planlar</h1>
+        <h1 style="color:#fff;">Profesyonel İstihbarat Planları</h1>
         <div class="pricing-grid">
             <div class="pricing-card">
-                <div><div class="plan-title">Özgür (Free)</div><div class="plan-price">0 TL</div><a href="/" class="btn-plan">Mevcut Plan</a></div>
+                <div>
+                    <div class="plan-title">Özgür (Free)</div>
+                    <div class="plan-price">0 TL</div>
+                    <ul class="plan-features">
+                        <li>12 Temel İstihbarat Modülü</li>
+                        <li>Standart IP & Whois Sorgu</li>
+                        <li>Tek Tıkla Misafir Girişi</li>
+                        <li>Temel Destek</li>
+                    </ul>
+                </div>
+                <a href="/" class="btn-plan">Mevcut Plan</a>
             </div>
             <div class="pricing-card featured">
                 <div>
                     <div class="plan-title">Profesyonel (Pro)</div>
                     <div class="plan-price">180 TL</div>
-                    <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992911196183&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
+                    <ul class="plan-features">
+                        <li>24 Gelişmiş Modül (Sosyal Ağlar dahil)</li>
+                        <li>Gerçek Zamanlı Hızlı Tarama</li>
+                        <li>Öncelikli Altyapı Desteği</li>
+                        <li>Doğrudan Shopify Ödeme Entegrasyonu</li>
+                    </ul>
                 </div>
+                <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992911196183&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
             </div>
             <div class="pricing-card">
                 <div>
                     <div class="plan-title">Başlangıç (VIP)</div>
                     <div class="plan-price">400 TL</div>
-                    <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992919486487&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
+                    <ul class="plan-features">
+                        <li>37 Sınırsız İstihbarat Modülü</li>
+                        <li>Sızıntı DB & Tehdit Analizi</li>
+                        <li>Özel Admin Yetkileri & Key Üretme</li>
+                        <li>7/24 Kesintisiz VIP Altyapı</li>
+                    </ul>
                 </div>
+                <a href="https://2hqenb-6k.myshopify.com/cart/add?id=8992919486487&quantity=1" target="_blank" class="btn-plan">Shopify ile Satın Al</a>
             </div>
         </div>
     </div>
