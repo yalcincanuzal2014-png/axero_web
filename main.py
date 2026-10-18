@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse, RedirectResponse
 import random
@@ -335,3 +336,19 @@ Durum: Tüm Yetkili Modüller Başarıyla Çalıştırıldı [axerocore.net]
                       .replace("{VIP_DISABLED}", vip_disabled)\
                       .replace("{%RESULT_SECTION%}", result_html)
     return HTMLResponse(content=panel)
+=======
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+
+app = FastAPI()
+
+templates = Jinja2Templates(directory="templates")
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    try:
+        return templates.TemplateResponse("index.html", {"request": request})
+    except Exception:
+        return "<h1>Axero Core Çalışıyor! 🚀</h1>"
+>>>>>>> 95e7989 (Shopify buy button entegrasyonu tamamlandi)

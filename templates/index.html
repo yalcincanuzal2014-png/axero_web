@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Axero Core - OSINT ve Lisans Portalı</title>
+    <style>
+        body { background-color: #0f111a; color: #00ffcc; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding-top: 40px; margin: 0; }
+        .container { background-color: #151821; width: 850px; margin: 0 auto; padding: 30px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); }
+        input[type="text"] { width: 80%; padding: 12px; background-color: #1f2330; border: 1px solid #00ffcc; color: white; font-size: 16px; border-radius: 6px; margin-bottom: 15px; }
+        button { background-color: #00ffcc; color: #0f111a; border: none; padding: 12px 25px; font-weight: bold; font-size: 15px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+        button:hover { background-color: #00cca3; }
+        pre { background-color: #1f2330; color: #00ffcc; padding: 15px; text-align: left; border-radius: 6px; font-family: Consolas, monospace; }
+        
+        .pricing-section { display: flex; justify-content: space-around; margin-top: 40px; gap: 20px; }
+        .pricing-card { background-color: #1f2330; border: 2px solid #00ffcc; border-radius: 10px; padding: 20px; width: 45%; box-shadow: 0 4px 15px rgba(0,255,204,0.1); }
+        .pricing-card h3 { margin-top: 0; color: #ffffff; font-size: 22px; }
+        .price { font-size: 24px; font-weight: bold; color: #00ffcc; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ AXERO CORE WEB PORTAL</h1>
+        <p style="color: #8f93af;">7/24 OSINT ve Güvenlik Süiti</p>
+        
+        <form action="/sorgula" method="post">
+            <input type="text" name="target" placeholder="Hedef IP, Domain veya Kullanıcı Adı girin..." required><br>
+            <button type="submit">WEB ÜZERİNDEN SORGULA</button>
+        </form>
+
+        {% if result %}
+            <h3>Analiz Sonucu:</h3>
+            <pre>{{ result }}</pre>
+        {% endif %}
+
+        <hr style="border: 0; border-top: 1px solid #2a2f42; margin: 40px 0;">
+
+        <h2>🚀 Premium Lisans Paketleri</h2>
+        <p style="color: #8f93af; margin-bottom: 30px;">Hemen bir paket seçerek Shopify üzerinden anında erişim sağlayın.</p>
+
+        <div class="pricing-section">
+            <!-- Pro Lisans Kartı (180 TL) -->
+            <div class="pricing-card">
+                <h3>AxeroCore Pro</h3>
+                <div class="price">180 TL</div>
+                <p style="color: #b0b5cd; font-size: 14px; margin-bottom: 20px;">Gelişmiş OSINT araçları ve sınırsız sorgu avantajı.</p>
+                <div id='product-component-1792326999399'></div>
+            </div>
+
+            <!-- VIP Lisans Kartı (400 TL) -->
+            <div class="pricing-card" style="border-color: #ff9900;">
+                <h3 style="color: #ff9900;">AxeroCore VIP</h3>
+                <div class="price" style="color: #ff9900;">400 TL</div>
+                <p style="color: #b0b5cd; font-size: 14px; margin-bottom: 20px;">Tam yetkili sistem erişimi, özel modüller ve öncelikli destek.</p>
+                <div id='product-component-1792327028907'></div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: '2hqenb-6k.myshopify.com',
+      storefrontAccessToken: 'd39c94e654b7b004032bc55a2fe84649',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      // Pro Lisans Butonu
+      ui.createComponent('product', {
+        id: '8992911196183',
+        node: document.getElementById('product-component-1792326999399'),
+        moneyFormat: '%7B%7Bamount%7D%7DTL',
+        options: {
+          "product": {
+            "styles": {
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } }
+            },
+            "buttonDestination": "checkout",
+            "text": { "button": "Pro Satın Al (180 TL)" }
+          }
+        }
+      });
+      // VIP Lisans Butonu
+      ui.createComponent('product', {
+        id: '8992919486487',
+        node: document.getElementById('product-component-1792327028907'),
+        moneyFormat: '%7B%7Bamount%7D%7DTL',
+        options: {
+          "product": {
+            "styles": {
+              "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } }
+            },
+            "buttonDestination": "checkout",
+            "text": { "button": "VIP Satın Al (400 TL)" }
+          }
+        }
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+</body>
+</html>
